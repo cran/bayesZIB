@@ -109,8 +109,8 @@ bayesZIB <- function(formula, data, priors=NULL, chains=3, iter=2000, adapt_delt
   }else{
     mcmc_samples <- rstan::sampling(stanmodels$model, 
                                     data = list(N = length(Y), M1 = ncol(X), M2 = ncol(Z), 
-                                                X1 = X, X2 = Z, y = Y, s_theta = 2, 
-                                                s = 2), chains = chains, 
+                                                X1 = X, X2 = Z, y = Y, s_theta = as.array(rep(1, ncol(X))), 
+                                                s = as.array(rep(1, ncol(Z)))), chains = chains, 
                                     iter = iter, control = list(adapt_delta = adapt_delta, max_treedepth = max_treedepth))
     output <- list()
     class(output) <- c("stanfit", "bayesZIB")

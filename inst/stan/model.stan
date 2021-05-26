@@ -17,8 +17,8 @@ data {
   matrix[N, M1] X1;           // design matrix (zero-inflated part)
   matrix[N, M2] X2;           // design matrix (non zero-inflated part)
   // Hyperparameters
-  real<lower=0> s_theta; 
-  real<lower=0> s; 
+  real<lower=0> s_theta[M1]; 
+  real<lower=0> s[M2]; 
 }
 
 parameters {
@@ -46,10 +46,10 @@ transformed parameters {
 model {
   // Priors
   for (i in 1:M1) {
-    target += normal_lpdf(theta[i] | 0, s_theta);
+    target += normal_lpdf(theta[i] | 0, s_theta[i]);
   }
   for (i in 1:M2) {
-   target += normal_lpdf(beta[i] | 0, s);
+   target += normal_lpdf(beta[i] | 0, s[i]);
   }
   // Likelihood
   for (n in 1:N) {

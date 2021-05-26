@@ -12,8 +12,8 @@ This package fits a Bayesian Bernoulli zero-inflated regression model handling d
 \tabular{ll}{
 Package: \tab bayesZIB\cr
 Type: \tab Package\cr
-Version: \tab 0.0.1\cr
-Date: \tab 2021-3-23\cr
+Version: \tab 0.0.2\cr
+Date: \tab 2021-5-12\cr
 License: \tab GPL version 2 or newer\cr
 LazyLoad: \tab yes\cr
 }
