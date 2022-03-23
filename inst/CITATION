@@ -1,0 +1,18 @@
+citHeader("To cite bayesZIB in publications use:")
+
+citEntry(entry = "Article",
+  title        = "Analysis of zero inflated dichotomous variables from a Bayesian perspective: application to occupational health",
+  author       = personList(as.person("David Moriña"),
+                   as.person("Pedro Puig"),
+                   as.person("Albert Navarro")),
+  journal      = "BMC Medical Research Methodology",
+  year         = "2021",
+  volume       = "21",
+  doi          = "10.1186/s12874-021-01427-2",
+
+  textVersion  =
+  paste("David Moriña, Pedro Puig, Albert Navarro (2021).",
+        "Analysis of zero inflated dichotomous variables from a Bayesian perspective: application to occupational health.",
+        "BMC Medical Research Methodology, 21:277.",
+        "DOI 10.1186/s12874-021-01427-2")
+)

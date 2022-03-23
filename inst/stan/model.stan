@@ -17,8 +17,8 @@ data {
   matrix[N, M1] X1;           // design matrix (zero-inflated part)
   matrix[N, M2] X2;           // design matrix (non zero-inflated part)
   // Hyperparameters
-  real<lower=0> s_theta[M1]; 
-  real<lower=0> s[M2]; 
+  real<lower=0> s_theta[M1];
+  real<lower=0> s[M2];
 }
 
 parameters {
@@ -33,10 +33,10 @@ transformed parameters {
   vector[N] eta_beta;
   real<lower=0.0, upper=1.0> w[N];
   real<lower=0.0, upper=1.0> p[N];
-  
+
   eta_theta = X1 * theta;
   eta_beta  = X2 * beta;
- 
+
   for (n in 1:N) {
     w[n] = exp(eta_theta[n])/(1+exp(eta_theta[n]));
     p[n] = exp(eta_beta[n])/(1+exp(eta_beta[n]));
@@ -54,5 +54,12 @@ model {
   // Likelihood
   for (n in 1:N) {
     target += zib_lpmf(y[n] | w[n], p[n]);
+  }
+}
+
+generated quantities {
+  vector[N] log_lik;
+  for (n in 1:N) {
+    log_lik[n] = zib_lpmf(y[n] | w[n], p[n]);
   }
 }
