@@ -1,15 +1,15 @@
 \encoding{utf8} 
 \name{bayesZIB-internal}
 \alias{bayesZIB-internal}
-\alias{Rcpp_model_model-class}
+\alias{Rcpp_rstantools_model_model-class}
 \alias{_rcpp_module_boot_stan_fit4model_mod}
-\alias{model_model}
+\alias{rstantools_model_model}
 \alias{stanmodels}
 
 \title{Internal bayesZIB functions and classes}
 \description{Internal bayesZIB functions and classes}
 \usage{
-model_model()
+rstantools_model_model()
 stanmodels()
 }
 

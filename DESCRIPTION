@@ -1,8 +1,8 @@
 Package: bayesZIB
 Type: Package
 Title: Bayesian Zero-Inflated Bernoulli Regression Model
-Version: 0.0.3
-Date: 2022-03-23
+Version: 0.0.4
+Date: 2022-04-18
 Encoding: UTF-8
 Authors@R: c(person(given = "David",
            family = "Moriña Soler",
@@ -30,9 +30,9 @@ LinkingTo: BH (>= 1.66.0), Rcpp (>= 0.12.0), RcppEigen (>= 0.3.3.3.0),
 RoxygenNote: 7.0.2
 NeedsCompilation: yes
 SystemRequirements: GNU make
-Packaged: 2022-03-23 09:53:38 UTC; dmorina
+Packaged: 2022-04-19 15:50:36 UTC; dmorina
 Author: David Moriña Soler [aut, cre] (<https://orcid.org/0000-0001-5949-7443>),
   Pedro Puig [aut],
   Albert Navarro [aut]
 Repository: CRAN
-Date/Publication: 2022-03-23 10:40:02 UTC
+Date/Publication: 2022-04-19 16:22:38 UTC
