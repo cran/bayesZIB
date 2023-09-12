@@ -1,8 +1,8 @@
 citHeader("To cite bayesZIB in publications use:")
 
-citEntry(entry = "Article",
+bibentry(bibtype = "Article",
   title        = "Analysis of zero inflated dichotomous variables from a Bayesian perspective: application to occupational health",
-  author       = personList(as.person("David Moriña"),
+  author       = c(as.person("David Moriña"),
                    as.person("Pedro Puig"),
                    as.person("Albert Navarro")),
   journal      = "BMC Medical Research Methodology",

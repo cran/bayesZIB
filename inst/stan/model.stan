@@ -13,12 +13,12 @@ data {
   // Number of parameters (non zero-inflated part)
   int<lower=0> M2;
   // Variables
-  int<lower=0, upper=1> y[N]; // outcome
+  array[N] int<lower=0, upper=1> y; // outcome
   matrix[N, M1] X1;           // design matrix (zero-inflated part)
   matrix[N, M2] X2;           // design matrix (non zero-inflated part)
   // Hyperparameters
-  real<lower=0> s_theta[M1];
-  real<lower=0> s[M2];
+  array[M1] real<lower=0> s_theta;
+  array[M2] real<lower=0> s;
 }
 
 parameters {
@@ -31,8 +31,8 @@ transformed parameters {
   // Probability trasformation from linear predictor
   vector[N] eta_theta;
   vector[N] eta_beta;
-  real<lower=0.0, upper=1.0> w[N];
-  real<lower=0.0, upper=1.0> p[N];
+  array[N] real<lower=0.0, upper=1.0> w;
+  array[N] real<lower=0.0, upper=1.0> p;
 
   eta_theta = X1 * theta;
   eta_beta  = X2 * beta;
